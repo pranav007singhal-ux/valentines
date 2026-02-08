@@ -1,147 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine 💖</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valentine?</title>
 
-<style>
-  body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(135deg, #ffd6e0, #ffeef3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Segoe UI', sans-serif;
-    overflow: hidden;
-  }
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
 
-  .card {
-    background: white;
-    border-radius: 22px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-    max-width: 420px;
-    width: 92%;
-    padding: 1.5rem;
-    text-align: center;
-    animation: pop 0.8s ease;
-  }
+    .card {
+      background: white;
+      padding: 2.5rem 2rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      max-width: 90%;
+      width: 380px;
+      animation: popIn 0.8s ease;
+    }
 
-  @keyframes pop {
-    from { transform: scale(0.85); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-  }
+    @keyframes popIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
 
-  img {
-    width: 100%;
-    border-radius: 18px;
-    margin-bottom: 1rem;
-  }
+    h1 {
+      margin-bottom: 0.5rem;
+      color: #ff4d6d;
+    }
 
-  h1 {
-    color: #ff4d6d;
-    font-size: 1.4rem;
-    margin-bottom: 1.5rem;
-  }
+    p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
 
-  button {
-    display: block;
-    width: 100%;
-    border: none;
-    border-radius: 40px;
-    padding: 0.9rem 1rem;
-    font-size: 0.95rem;
-    cursor: pointer;
-    margin-top: 0.7rem;
-    transition: transform 0.2s ease;
-  }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
 
-  button:hover {
-    transform: scale(1.05);
-  }
+    button {
+      border: none;
+      padding: 0.8rem 1.4rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
 
-  .yes {
-    background: #ff4d6d;
-    color: white;
-  }
+    button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
-  .yes2 {
-    background: #ffe3ea;
-    color: #ff4d6d;
-    font-weight: 600;
-  }
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
 
-  .heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 1.6rem;
-    animation: floatUp 3s linear forwards;
-  }
+    .no {
+      background: #f1f1f1;
+      color: #555;
+      position: relative;
+    }
 
-  @keyframes floatUp {
-    0% { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-120vh) scale(1.6); opacity: 0; }
-  }
+    /* Celebration */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      font-size: 1.5rem;
+      animation: floatUp 3s linear forwards;
+    }
 
-  iframe {
-    margin-top: 1rem;
-    border-radius: 12px;
-  }
-</style>
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="card" id="card">
-  <img src="valentine.jpg" alt="Us ❤️">
-
-  <h1>Ms Mils, will you be my Valentine?</h1>
-
-  <button class="yes" onclick="celebrate()">
-    yes
-  </button>
-
-  <button class="yes2" onclick="celebrate()">
-    of course yes my deku i love you so much how dare you even ask me this question
-  </button>
-</div>
-
-<script>
-function celebrate() {
-  const card = document.getElementById("card");
-
-  card.innerHTML = `
-    <h1>💖💖💖</h1>
-    <p style="font-size:1.05rem;">
-      to the infinity plus 17 more valentines with you my babushka
+  <div class="card" id="card">
+    <h1>Hey ❤️</h1>
+    <p>
+      I have an extremely important question<br>
+      (scientifically proven to improve happiness)
     </p>
 
-    <iframe
-      src="https://open.spotify.com/embed/track/1dGr1c8CrMLDpV6mPbImSI"
-      width="100%"
-      height="80"
-      frameborder="0"
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-    </iframe>
-  `;
+    <h2>Will you be my Valentine?</h2>
 
-  for (let i = 0; i < 35; i++) {
-    spawnHeart();
-  }
-}
+    <div class="buttons">
+      <button class="yes" onclick="sayYes()">Yes 💕</button>
+      <button class="no" onclick="moveNo()">Hmm…</button>
+    </div>
+  </div>
 
-function spawnHeart() {
-  const heart = document.createElement("div");
-  heart.className = "heart";
-  heart.innerText = "❤️";
-  heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = (2 + Math.random() * 2) + "s";
-  document.body.appendChild(heart);
+  <script>
+    function sayYes() {
+      const card = document.getElementById("card");
+      card.innerHTML = `
+        <h1>YAYYY!! 💖</h1>
+        <p>
+          Best decision ever confirmed.<br><br>
+          Get ready for good food, bad jokes,<br>
+          and lots of love 🥰
+        </p>
+      `;
 
-  setTimeout(() => heart.remove(), 4000);
-}
-</script>
+      for (let i = 0; i < 30; i++) {
+        createHeart();
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (2 + Math.random() * 2) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+
+    function moveNo() {
+      const noBtn = document.querySelector(".no");
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
 
 </body>
 </html>
